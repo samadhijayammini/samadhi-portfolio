@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#07060F">
+<title>Samadhi Abeygunawardhana — Digital Marketing Executive &amp; UI/UX Engineer</title>
+<meta name="description" content="Portfolio of Samadhi Jayamini Abeygunawardhana — Digital Marketing Executive and UI/UX Engineer based in Matara, Sri Lanka.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* Neon palette */
+    --bg: #07060F;
+    --bg-raised: #0F0C1F;
+    --card: #0C0A1A;
+    --ink: #F2F0FF;
+    --ink-soft: #A5A2CE;
+    --line: #262046;
+    --cyan: #22F5E4;
+    --magenta: #FF35D8;
+    --violet: #8F5BFF;
+    --glow-cyan: rgba(34,245,228,.45);
+    --glow-magenta: rgba(255,53,216,.5);
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --display: "Syne", "Trebuchet MS", sans-serif;
+    --sans: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color-scheme: dark;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin:0;
+    background:
+      radial-gradient(900px 520px at 88% 0, rgba(143,91,255,.22), transparent 65%),
+      radial-gradient(760px 480px at 0 8%, rgba(255,53,216,.10), transparent 65%),
+      var(--bg);
+    background-repeat: no-repeat;
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  img{ max-width:100%; display:block; }
+  a{ color: inherit; }
+  [hidden]{ display:none !important; }
+
+  :focus-visible{
+    outline: 2px solid var(--cyan);
+    outline-offset: 3px;
+  }
+
+  .wrap{
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 56px);
+  }
+
+  /* ---------- Nav ---------- */
+  header.nav{
+    position: sticky; top:0; z-index: 50;
+    background: color-mix(in srgb, var(--bg) 82%, transparent);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 16px clamp(20px,5vw,56px);
+  }
+  .nav-mark{
+    font-family: var(--display); font-weight: 700; font-size: 1.05rem;
+    letter-spacing: 0.01em; text-decoration:none;
+    text-shadow: 0 0 16px var(--glow-cyan);
+  }
+  .nav-links{ display:flex; gap: 26px; list-style:none; margin:0; padding:0; }
+  .nav-links a{ text-decoration:none; font-size: 0.9rem; color: var(--ink-soft); transition: color .18s, text-shadow .18s; }
+  .nav-links a:hover, .nav-links a:focus-visible{ color: var(--cyan); text-shadow: 0 0 12px var(--glow-cyan); }
+
+  @media (max-width: 720px){
+    .nav-links{ display:none; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding: 88px 0 72px;
+    display:grid;
+    grid-template-columns: 1.25fr 0.9fr;
+    gap: 56px;
+    align-items:center;
+  }
+  .hero-eyebrow{
+    color: var(--cyan);
+    font-size: 0.95rem;
+    margin: 0 0 18px;
+    font-weight:500;
+    text-shadow: 0 0 14px var(--glow-cyan);
+  }
+  .hero h1{
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(2.3rem, 5vw, 3.8rem);
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    margin: 0 0 22px;
+    text-shadow: 0 0 34px rgba(143,91,255,.55);
+  }
+  .hero p.lede{
+    max-width: 46ch;
+    color: var(--ink-soft);
+    font-size: 1.08rem;
+    margin: 0 0 32px;
+  }
+  .hero-actions{ display:flex; gap:14px; flex-wrap: wrap; }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding: 12px 22px;
+    border-radius: var(--radius-sm);
+    text-decoration:none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: 1px solid transparent;
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s, color .18s;
+  }
+  .btn-primary{
+    background: var(--cyan); color: #04141A;
+    box-shadow: 0 0 22px -2px var(--glow-cyan);
+  }
+  .btn-primary:hover{ transform: translateY(-2px); box-shadow: 0 0 34px 0 var(--glow-cyan); }
+  .btn-ghost{ border-color: var(--line); color: var(--ink); }
+  .btn-ghost:hover{
+    border-color: var(--magenta); color: var(--magenta);
+    box-shadow: 0 0 22px -4px var(--glow-magenta);
+    transform: translateY(-2px);
+  }
+
+  .hero-portrait{
+    position: relative;
+    justify-self: end;
+    width: min(100%, 340px);
+  }
+  .hero-portrait .frame{
+    position:relative;
+    border-radius: var(--radius-md);
+    overflow:hidden;
+    aspect-ratio: 4/5;
+    background: var(--bg-raised);
+    border: 1px solid var(--cyan);
+    box-shadow:
+      0 0 0 1px rgba(34,245,228,.25),
+      0 0 42px -6px var(--glow-cyan),
+      0 0 90px -24px var(--glow-magenta);
+  }
+  .hero-portrait img{ width:100%; height:100%; object-fit: cover; }
+  .hero-portrait .tag{
+    position:absolute; left: -18px; bottom: 26px;
+    background: var(--card);
+    border: 1px solid var(--magenta);
+    border-radius: var(--radius-sm);
+    padding: 12px 16px;
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    box-shadow: 0 0 24px -6px var(--glow-magenta);
+  }
+  .hero-portrait .tag strong{
+    display:block; font-family: var(--display); font-size: 1.05rem; font-weight:700;
+    color: var(--magenta); text-shadow: 0 0 12px var(--glow-magenta);
+  }
+
+  @media (max-width: 860px){
+    .hero{ grid-template-columns: 1fr; padding-top: 56px; }
+    .hero-portrait{ justify-self:center; width: min(72%, 300px); order:-1; }
+    .hero-portrait .tag{ left: 12px; }
+  }
+
+  /* ---------- Section shell ---------- */
+  section{ padding: 76px 0; border-top: 1px solid var(--line); }
+  section:first-of-type{ border-top:none; }
+  .section-head{
+    display:flex; align-items: baseline; justify-content: space-between;
+    gap: 24px; margin-bottom: 44px; flex-wrap: wrap;
+  }
+  .section-head h2{
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    margin:0;
+    letter-spacing: -0.01em;
+    text-shadow: 0 0 22px rgba(34,245,228,.35);
+  }
+  .section-num{ color: var(--cyan); font-size: 0.9rem; opacity: .85; }
+
+  /* ---------- Profile / about ---------- */
+  .about-grid{
+    display:grid; grid-template-columns: 0.7fr 1.3fr; gap: 56px;
+  }
+  .about-grid p{ color: var(--ink-soft); font-size: 1.05rem; margin: 0 0 18px; max-width: 62ch; }
+  .about-facts{ list-style:none; margin:0; padding:0; display:grid; gap:14px; }
+  .about-facts li{ font-size:0.92rem; color: var(--ink-soft); border-bottom:1px solid var(--line); padding-bottom:12px; }
+  .about-facts li span{ display:block; color: var(--ink); font-weight:600; margin-bottom:2px; }
+  @media (max-width: 780px){ .about-grid{ grid-template-columns:1fr; } }
+
+  /* ---------- Experience timeline ---------- */
+  .timeline{ display:grid; gap: 0; }
+  .tl-item{
+    display:grid; grid-template-columns: 190px 1fr; gap: 32px;
+    padding: 32px 0; border-top: 1px solid var(--line);
+  }
+  .tl-item:first-child{ border-top:none; }
+  .tl-date{ color: var(--cyan); font-size: 0.9rem; font-weight:600; padding-top:4px; }
+  .tl-role{ font-family: var(--display); font-size: 1.25rem; font-weight: 600; margin: 0 0 4px; }
+  .tl-org{ color: var(--magenta); font-size: 0.95rem; margin: 0 0 16px; }
+  .tl-item ul{ margin:0; padding-left: 18px; color: var(--ink-soft); }
+  .tl-item li{ margin-bottom: 6px; }
+  .tl-item li::marker{ color: var(--violet); }
+  @media (max-width: 640px){ .tl-item{ grid-template-columns: 1fr; gap:8px; } }
+
+  /* ---------- Projects ---------- */
+  .proj-grid{
+    display:grid; grid-template-columns: repeat(2, 1fr); gap: 22px;
+  }
+  .proj-card{
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    padding: 30px;
+    display:flex; flex-direction:column; justify-content:space-between;
+    min-height: 210px;
+    transition: border-color .2s, transform .2s, box-shadow .2s;
+  }
+  .proj-card:hover{
+    border-color: var(--cyan);
+    transform: translateY(-3px);
+    box-shadow: 0 0 30px -8px var(--glow-cyan);
+  }
+  .proj-card:nth-child(1){ grid-column: span 2; }
+  .proj-card h3{ font-family: var(--display); font-weight:600; font-size: 1.2rem; margin: 0 0 10px; }
+  .proj-card p{ color: var(--ink-soft); font-size: 0.96rem; margin:0 0 18px; }
+  /* Optional cover image on a project card (removes itself if the file is missing) */
+  .proj-thumb{
+    aspect-ratio: 16/8;
+    overflow:hidden;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--line);
+    background: var(--bg-raised);
+    margin-bottom: 22px;
+  }
+  .proj-thumb img{ width:100%; height:100%; object-fit: cover; object-position: top; }
+  .proj-stack{ display:flex; gap:8px; flex-wrap:wrap; }
+  .proj-stack span{
+    font-size: 0.76rem; color: var(--cyan);
+    background: rgba(34,245,228,.08);
+    border: 1px solid rgba(34,245,228,.28);
+    border-radius: 999px; padding: 5px 11px;
+  }
+  @media (max-width: 720px){ .proj-grid{ grid-template-columns:1fr; } .proj-card:nth-child(1){ grid-column: span 1; } }
+
+  /* ---------- Figma / product design ---------- */
+  .design-grid{
+    display:grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  }
+  .design-card{
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: border-color .2s, transform .2s, box-shadow .2s;
+    display:flex; flex-direction:column;
+  }
+  .design-card:hover{
+    border-color: var(--magenta);
+    transform: translateY(-3px);
+    box-shadow: 0 0 30px -8px var(--glow-magenta);
+  }
+  .design-thumb{
+    aspect-ratio: 16/10;
+    background: var(--bg-raised);
+    overflow:hidden;
+  }
+  .design-thumb img{ width:100%; height:100%; object-fit: cover; object-position: top; }
+  .design-body{ padding: 20px 22px 22px; display:flex; flex-direction:column; gap:8px; flex:1; }
+  .design-body h3{ font-family: var(--display); font-weight:600; font-size: 1.05rem; margin:0; }
+  .design-body p{ color: var(--ink-soft); font-size: 0.9rem; margin:0; flex:1; }
+  .design-link, .more-link{
+    font-size: 0.88rem; font-weight:600; text-decoration:none;
+    color: var(--cyan); border-bottom: 1px solid var(--cyan);
+    padding-bottom: 1px;
+    transition: text-shadow .18s;
+  }
+  .design-link:hover, .more-link:hover{ text-shadow: 0 0 14px var(--glow-cyan); }
+  .design-link{ align-self:flex-start; }
+  @media (max-width: 900px){ .design-grid{ grid-template-columns: repeat(2,1fr); } }
+  @media (max-width: 600px){ .design-grid{ grid-template-columns: 1fr; } }
+
+  /* ---------- Graphic post grid ---------- */
+  .graphic-grid{
+    display:grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+  }
+  .graphic-item{
+    aspect-ratio: 1/1;
+    border-radius: var(--radius-sm);
+    overflow:hidden;
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+    cursor: zoom-in;
+    transition: border-color .2s, box-shadow .2s;
+  }
+  .graphic-item:hover{ border-color: var(--violet); box-shadow: 0 0 22px -6px rgba(143,91,255,.7); }
+  .graphic-item img{ width:100%; height:100%; object-fit: cover; transition: transform .25s ease; }
+  .graphic-item:hover img{ transform: scale(1.04); }
+  @media (max-width: 900px){ .graphic-grid{ grid-template-columns: repeat(4,1fr); } }
+  @media (max-width: 640px){ .graphic-grid{ grid-template-columns: repeat(3,1fr); gap: 10px; } }
+  @media (max-width: 420px){ .graphic-grid{ grid-template-columns: repeat(2,1fr); } }
+
+  .more-link{
+    display:inline-flex; align-items:center; gap:6px;
+    margin-top: 28px;
+    padding-bottom: 2px;
+  }
+
+  /* ---------- Video projects ---------- */
+  .video-grid{
+    display:grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+  }
+  .video-card{
+    appearance:none; font: inherit; color: inherit; text-align:left;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    padding: 0;
+    overflow:hidden;
+    cursor: pointer;
+    display:flex; flex-direction:column;
+    transition: border-color .2s, transform .2s, box-shadow .2s;
+  }
+  .video-card:hover, .video-card:focus-visible{
+    border-color: var(--magenta);
+    transform: translateY(-3px);
+    box-shadow: 0 0 34px -8px var(--glow-magenta);
+  }
+  .video-thumb{
+    position:relative;
+    display:block;
+    aspect-ratio: 16/9;
+    background: var(--bg-raised);
+    overflow:hidden;
+  }
+    .video-thumb img{
+    width:100%; height:100%; object-fit: contain; pointer-events:none;
+  }
+  .video-thumb::after{
+    content:""; position:absolute; inset:0;
+    background: linear-gradient(to top, rgba(7,6,15,.65), transparent 55%);
+    pointer-events:none;
+  }
+  .play{
+    position:absolute; z-index:1; left:50%; top:50%;
+    width: 64px; height: 64px; margin: -32px 0 0 -32px;
+    border-radius: 50%;
+    display:flex; align-items:center; justify-content:center;
+    background: rgba(7,6,15,.55);
+    border: 2px solid var(--magenta);
+    box-shadow: 0 0 26px -2px var(--glow-magenta), inset 0 0 16px -4px var(--glow-magenta);
+    transition: transform .2s, box-shadow .2s;
+  }
+  .play svg{ width: 24px; height: 24px; margin-left: 3px; fill: var(--ink); }
+  .video-card:hover .play, .video-card:focus-visible .play{
+    transform: scale(1.08);
+    box-shadow: 0 0 40px 2px var(--glow-magenta), inset 0 0 20px -2px var(--glow-magenta);
+  }
+  .video-body{ display:block; padding: 18px 22px 22px; }
+  .video-title{ display:block; font-family: var(--display); font-weight:600; font-size: 1.05rem; margin: 0 0 4px; }
+  .video-desc{ display:block; color: var(--ink-soft); font-size: 0.9rem; }
+  .video-desc:empty{ display:none; }
+  @media (max-width: 720px){ .video-grid{ grid-template-columns: 1fr; } }
+
+  /* ---------- Lightbox (images + Drive videos) ---------- */
+  .lightbox{
+    position: fixed; inset:0; z-index: 200;
+    background: rgba(4,3,10,.9);
+    display:none; align-items:center; justify-content:center;
+    padding: 32px;
+  }
+  .lightbox.is-open{ display:flex; }
+  .lightbox img, .lightbox video{
+    max-width: min(92vw, 1100px); max-height: 86vh;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 0 60px -10px var(--glow-cyan), 0 0 0 1px rgba(34,245,228,.35);
+    background: #000;
+  }
+  .lightbox iframe{
+    width: min(92vw, 1000px); aspect-ratio: 16/9; max-height: 80vh;
+    border: 0; border-radius: var(--radius-sm);
+    box-shadow: 0 0 60px -10px var(--glow-cyan), 0 0 0 1px rgba(34,245,228,.35);
+    background: #000;
+  }
+  .lightbox-close{
+    position:absolute; top: 22px; right: 28px;
+    width: 42px; height:42px; border-radius:50%;
+    background: rgba(255,255,255,.06); color: var(--ink);
+    border: 1px solid var(--magenta);
+    font-size: 1.15rem; line-height:1; cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow: 0 0 18px -4px var(--glow-magenta);
+  }
+  .lightbox-close:hover{ background: rgba(255,53,216,.18); }
+  .lightbox-open{
+    position:absolute; bottom: 22px; left:50%; transform: translateX(-50%);
+    font-size: 0.88rem; font-weight:600; text-decoration:none;
+    color: var(--cyan); border-bottom: 1px solid var(--cyan);
+    padding-bottom: 1px; white-space: nowrap;
+  }
+
+  /* ---------- Skills ---------- */
+  .skills-cols{ display:grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
+  .skills-cols h3{ font-family: var(--display); font-size: 1rem; font-weight:600; margin: 0 0 16px; color: var(--magenta); }
+  .tag-cloud{ display:flex; flex-wrap:wrap; gap: 9px; }
+  .tag-cloud span{
+    font-size: 0.87rem; padding: 8px 14px;
+    border: 1px solid var(--line); border-radius: 999px;
+    color: var(--ink-soft);
+    transition: border-color .18s, color .18s, box-shadow .18s;
+  }
+  .tag-cloud span:hover{ border-color: var(--cyan); color: var(--cyan); box-shadow: 0 0 16px -4px var(--glow-cyan); }
+  @media (max-width: 720px){ .skills-cols{ grid-template-columns:1fr; gap:28px; } }
+
+  /* ---------- Education ---------- */
+  .edu-list{ list-style:none; margin:0; padding:0; display:grid; gap: 18px; }
+  .edu-list li{
+    display:grid; grid-template-columns: 1fr auto; gap: 12px;
+    padding-bottom:18px; border-bottom: 1px solid var(--line);
+    color: var(--ink-soft); font-size: 0.98rem;
+  }
+  .edu-list li strong{ color: var(--ink); font-weight:600; }
+  .edu-list li em{ font-style:normal; color: var(--cyan); font-size: 0.85rem; white-space:nowrap; }
+
+  /* ---------- Contact ---------- */
+  .contact{
+    border: 1px solid transparent;
+    background:
+      linear-gradient(var(--bg-raised), var(--bg-raised)) padding-box,
+      linear-gradient(135deg, var(--cyan), var(--violet), var(--magenta)) border-box;
+    box-shadow: 0 0 60px -20px var(--glow-magenta);
+    border-radius: var(--radius-md);
+    padding: clamp(36px, 6vw, 64px);
+    display:grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items:center;
+  }
+  .contact h2{ font-family: var(--display); font-weight:600; font-size: clamp(1.8rem,3.6vw,2.5rem); margin:0 0 14px; text-shadow: 0 0 26px rgba(255,53,216,.45); }
+  .contact p{ color: var(--ink-soft); margin:0; max-width: 42ch; }
+  .contact-links{ display:grid; gap:12px; }
+  .contact-links a{
+    display:flex; justify-content:space-between; align-items:center;
+    text-decoration:none; padding: 14px 18px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    font-size: 0.94rem;
+    transition: background .18s, border-color .18s, box-shadow .18s;
+  }
+  .contact-links a:hover{
+    background: rgba(34,245,228,.06);
+    border-color: var(--cyan);
+    box-shadow: 0 0 20px -6px var(--glow-cyan);
+  }
+  .contact-links a .arrow{ color: var(--cyan); }
+  @media (max-width: 780px){ .contact{ grid-template-columns:1fr; } }
+
+  footer{ padding: 34px 0 50px; text-align:center; color: var(--ink-soft); font-size: 0.85rem; }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+    *{ transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-mark">Samadhi&nbsp;Abeygunawardhana</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#about">Profile</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#work">Development</a></li>
+        <li><a href="#design">Design</a></li>
+        <li><a href="#graphics">Graphics</a></li>
+        <li><a href="#videos">Videos</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div id="top" class="wrap">
+
+  <!-- HERO -->
+  <section class="hero" style="border:none;">
+    <div>
+      <p class="hero-eyebrow">Samadhi Abeygunawardhana</p>
+      <h1>Marketing strategy,<br>built with a designer's eye.</h1>
+      <p class="lede">I'm Samadhi — a Digital Marketing Executive and UI/UX Engineer. I plan campaigns, design the creative that carries them, and build the interfaces people actually use them on.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#work">See the work</a>
+        <a class="btn btn-ghost" href="#contact">Get in touch</a>
+      </div>
+    </div>
+    <div class="hero-portrait">
+      <div class="frame">
+        <img src="images/samadhi.webp" alt="Portrait of Samadhi Jayamini Abeygunawardhana" width="800" height="1000" fetchpriority="high">
+      </div>
+      <div class="tag"><strong>2+ yrs</strong>marketing &amp; UI/UX</div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-head">
+      <h2>Profile</h2>
+      <span class="section-num">About</span>
+    </div>
+    <div class="about-grid">
+      <div>
+        <p>A results-driven digital marketer and UI/UX engineer skilled in social media management, content creation, SEO, and graphic design, with a strong foundation in UI/UX design and frontend development.</p>
+        <p>Currently working across marketing and product at Envinse, and studying for a Bachelor of Information and Communication Technology at the University of Colombo.</p>
+      </div>
+      <ul class="about-facts">
+        <li><span>Currently</span>Digital Marketing Executive / UI/UX Engineer, Envinse</li>
+        <li><span>Studying</span>B.ICT, University of Colombo</li>
+        <li><span>Based in</span>Matara, Sri Lanka</li>
+        <li><span>Languages</span>English, Sinhala</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-head">
+      <h2>Experience</h2>
+      <span class="section-num">02 years, and counting</span>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-date">Jan 2026 — Present</div>
+        <div>
+          <h3 class="tl-role">Digital Marketing Executive / UI/UX Engineer</h3>
+          <p class="tl-org">Envinse</p>
+          <ul>
+            <li>Manage social media accounts: content planning, scheduling and engagement</li>
+            <li>Design social media graphics and marketing creatives for digital and print</li>
+            <li>Create and edit video for social media and promotions</li>
+            <li>Run SEO to improve website visibility and organic reach</li>
+            <li>Design UI/UX for web and mobile applications</li>
+            <li>Produce graphic design assets for marketing materials</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Feb 2025 — Oct 2025</div>
+        <div>
+          <h3 class="tl-role">Intern UI/UX Designer</h3>
+          <p class="tl-org">Variosystems Private Limited</p>
+          <ul>
+            <li>9-months internship in UI/UX design and frontend development</li>
+            <li>Designed user interfaces for web and mobile applications</li>
+            <li>Applied HTML, CSS and Tailwind CSS for responsive frontend development</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="work">
+    <div class="section-head">
+      <h2>Development projects</h2>
+      <span class="section-num">Apps &amp; web builds</span>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-card">
+        <div>
+          <!-- Optional cover: add images/projects/taskzen.webp (if the file is missing, this block just disappears) -->
+          <div class="proj-thumb"><img src="images/projects/taskzen.webp" alt="TaskZen app screens" loading="lazy" onerror="this.parentElement.remove()"></div>
+          <h3>TaskZen</h3>
+          <p>A task management app built with Java and Kotlin, with an interface designed first in Figma to keep the daily flow of adding, sorting and completing tasks fast and uncluttered.</p>
+        </div>
+        <div class="proj-stack"><span>Figma</span><span>Java</span><span>Kotlin</span></div>
+      </div>
+<!--
+      <div class="proj-card">
+        <div>
+          <h3>FoodieGoodi</h3>
+          <p>UI/UX for a healthy-food app, designed around an intuitive user experience.</p>
+        </div>
+        <div class="proj-stack"><span>UI/UX</span><span>Figma</span></div>
+      </div>
+      <div class="proj-card">
+        <div>
+          <h3>StockMind</h3>
+          <p>UI/UX for an inventory management app, built for people tracking stock day to day.</p>
+        </div>
+        <div class="proj-stack"><span>UI/UX</span><span>Figma</span></div>
+      </div>
+
+       -->
+      <div class="proj-card">
+        <div>
+          <!-- Optional cover: add images/projects/lms.webp -->
+          <div class="proj-thumb"><img src="images/projects/lms.webp" alt="LMS website" loading="lazy" onerror="this.parentElement.remove()"></div>
+          <h3>LMS Website</h3>
+          <p>A learning management system, designed and built end to end.</p>
+        </div>
+        <div class="proj-stack"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT DESIGN / FIGMA -->
+  <section id="design">
+    <div class="section-head">
+      <h2>Product design</h2>
+      <span class="section-num">Figma</span>
+    </div>
+    <div class="design-grid">
+
+      <div class="design-card">
+        <div class="design-thumb">
+          <img src="images/design/botrox.webp" alt="BotRox website design" loading="lazy">
+        </div>
+        <div class="design-body">
+          <h3>BotRox website</h3>
+          <p>Website content and page design for BotRox.</p>
+          <a class="design-link" href="https://www.figma.com/design/GDucxKHFuaEI0vKlOtSKnn/Website-Content-Document-for-BotRox-samadhi?node-id=0-1&t=ZFMbYkGcIFOz8lVG-1" target="_blank" rel="noopener">View on Figma →</a>
+        </div>
+      </div>
+
+      <div class="design-card">
+        <div class="design-thumb">
+          <img src="images/design/salaru.webp" alt="SalaRu Sri Lankan Cultural Academy website design" loading="lazy">
+        </div>
+        <div class="design-body">
+          <h3>SalaRu Dancing Academy</h3>
+          <p>Website design for SalaRu Sri Lankan Cultural Academy.</p>
+          <a class="design-link" href="https://www.figma.com/design/Gncc1RW3Ruyi5QNhR0tx0C/SalaRu-Sri-Lankan-Cultural-Academy?node-id=0-1&t=BkMWzxc9Oef7ETfl-1" target="_blank" rel="noopener">View on Figma →</a>
+        </div>
+      </div>
+
+      <div class="design-card">
+        <div class="design-thumb">
+          <img src="images/design/amaran.webp" alt="Amaran Resort hotel website design" loading="lazy">
+        </div>
+        <div class="design-body">
+          <h3>Amaran Resort website</h3>
+          <p>Hotel website design for Amaran Resort.</p>
+          <a class="design-link" href="https://www.figma.com/design/3jJ9B1Rgb4aF9HGAtyHIYK/HOTEL-AMARAN-RESORT?node-id=1-2&t=ycgQjmxRoW5Ycanf-1" target="_blank" rel="noopener">View on Figma →</a>
+        </div>
+      </div>
+
+      <div class="design-card">
+        <div class="design-thumb">
+          <img src="images/design/shopfloor.webp" alt="Shopfloor app design" loading="lazy">
+        </div>
+        <div class="design-body">
+          <h3>Shopfloor</h3>
+          <p>Web app design for Shopfloor.</p>
+          <a class="design-link" href="https://www.figma.com/design/u9wjL8QypKzAJpamZ4jKAO/shopflorr?node-id=0-1&t=QGE3sby5hdiK3lOG-1" target="_blank" rel="noopener">View on Figma →</a>
+        </div>
+      </div>
+
+      <div class="design-card">
+        <div class="design-thumb">
+          <img src="images/design/bhoomi.webp" alt="Bhoomi Rental website design" loading="lazy">
+        </div>
+        <div class="design-body">
+          <h3>Bhoomi Rental</h3>
+          <p>Website design for Bhoomi Rental.</p>
+          <a class="design-link" href="https://www.figma.com/design/BF7DyAJcCJrvm7CxO9etqP/Bhoomi-rental?node-id=0-1&t=MvFt47JfWWQ4PHhW-1" target="_blank" rel="noopener">View on Figma →</a>
+        </div>
+      </div>
+
+      <div class="design-card">
+        <div class="design-thumb">
+          <img src="images/design/traffic-monitor.webp" alt="Intranet Traffic Monitor dashboard design" loading="lazy">
+        </div>
+        <div class="design-body">
+          <h3>Traffic Monitor Tool</h3>
+          <p>Analytics dashboard for real-time intranet usage, user activity and top visited pages.</p>
+          <a class="design-link" href="https://www.figma.com/design/ETW6jRhSSP2RKUeQgrJ45o/traffic-tool?node-id=20-369&t=cZH1O2I9FJjgBNgg-0" target="_blank" rel="noopener">View on Figma →</a>
+        </div>
+      </div>
+
+      <div class="design-card">
+        <div class="design-thumb">
+          <img src="images/design/envinse.webp" alt="Envinse assessment landing page design" loading="lazy">
+        </div>
+        <div class="design-body">
+          <h3>Envinse Assessment Page</h3>
+          <p>Landing page design for Envinse.</p>
+          <a class="design-link" href="https://www.figma.com/design/mm2oFsANvvSehOS8jnoVGv/Landing-page---Envinse?node-id=10-27&t=MvFt47JfWWQ4PHhW-1" target="_blank" rel="noopener">View on Figma →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <a class="more-link" href="https://drive.google.com/drive/folders/18hE7ac1Ou2rhaVSx8PIeeQMr-USNTM3f?usp=sharing" target="_blank" rel="noopener">See the full design library  →</a>
+  </section>
+
+  <!-- GRAPHIC POSTS -->
+  <section id="graphics">
+    <div class="section-head">
+      <h2>Graphic design</h2>
+      <span class="section-num">24 posts</span>
+    </div>
+    <!--
+      These are small compressed copies (images/graphics/1.webp ... 24.webp),
+      made by compress.py. The full-quality originals stay in Google Drive
+      and are reachable through the "See the full collection" link below.
+      Click any image to view it larger.
+    -->
+    <div class="graphic-grid">
+      <div class="graphic-item"><img src="images/graphics/1.webp" alt="Graphic post 1" loading="lazy" decoding="async" onclick="openLightbox(this.src, this.alt)"></div>
+      <div class="graphic-item"><img src="images/graphics/2.webp" alt="Graphic post 2" loading="lazy" decoding="async" onclick="openLightbox(this.src, this.alt)"></div>
+      <div class="graphic-item"><img src="images/graphics/3.webp" alt="Graphic post 3" loading="lazy" decoding="async" onclick="openLightbox(this.src, this.alt)"></div>
+      <div class="graphic-item"><img src="images/graphics/4.webp" alt="Graphic post 4" loading="lazy" decoding="async" onclick="openLightbox(this.src, this.alt)"></div>
+      <div class="graphic-item"><img src="images/graphics/5.webp" alt="Graphic post 5" loading="lazy" decoding="async" onclick="openLightbox(this.src, this.alt)"></div>
+      <div class="graphic-item"><img src="images/graphics/6.webp" alt="Graphic post 6" loading="lazy" decoding="async" onclick="openLightbox(this.src, this.alt)"></div>
+      <div class="graphic-item"><img src="images/graphics/7.webp" alt="Graphic post 7" loading="lazy" decoding="async" onclick="openLightbox(this.src, this.alt)"></div>
+      <div class="graphic-item"><img src="images/graphics/8.webp" alt="Graphic post 8" loading="lazy" decoding="async" onclick="openLightbox(this.src, this.alt)"></div>
+      <div class="graphic-item"><img src="images/graphics/9.webp" alt="Graphic post 9" loading="lazy" decoding="async" onclick="openLightbox(this.src, this.alt)"></div>
+      <div class="graphic-item"><img src="images/graphics/10.webp" alt="Graphic post 10" loading="lazy" decoding="async" onclick="openLightbox(this.src, this.alt)"></div>
+      <div class="graphic-item"><img src="images/graphics/11.webp" alt="Graphic post 11" loading="lazy" decoding="async" onclick="openLightbox(this.src, this.alt)"></div>
+      <div class="graphic-item"><img src="images/graphics/12.webp" alt="Graphic post 12" loading="lazy" decoding="async" onclick="openLightbox(this.src, this.alt)"></div>
+      <div class="graphic-item"><img src="images/graphics/13.webp" alt="Graphic post 13" loading="lazy" decoding="async" onclick="openLightbox(this.src, this.alt)"></div>
+      <div class="graphic-item"><img src="images/graphics/14.webp" alt="Graphic post 14" loading="lazy" decoding="async" onclick="openLightbox(this.src, this.alt)"></div>
+      <div class="graphic-item"><img src="images/graphics/15.webp" alt="Graphic post 15" loading="lazy" decoding="async" onclick="openLightbox(this.src, this.alt)"></div>
+      <div class="graphic-item"><img src="images/graphics/16.webp" alt="Graphic post 16" loading="lazy" decoding="async" onclick="openLightbox(this.src, this.alt)"></div>
+      <div class="graphic-item"><img src="images/graphics/17.webp" alt="Graphic post 17" loading="lazy" decoding="async" onclick="openLightbox(this.src, this.alt)"></div>
+      <div class="graphic-item"><img src="images/graphics/18.webp" alt="Graphic post 18" loading="lazy" decoding="async" onclick="openLightbox(this.src, this.alt)"></div>
+      <div class="graphic-item"><img src="images/graphics/19.webp" alt="Graphic post 19" loading="lazy" decoding="async" onclick="openLightbox(this.src, this.alt)"></div>
+      <div class="graphic-item"><img src="images/graphics/20.webp" alt="Graphic post 20" loading="lazy" decoding="async" onclick="openLightbox(this.src, this.alt)"></div>
+      <div class="graphic-item"><img src="images/graphics/21.webp" alt="Graphic post 21" loading="lazy" decoding="async" onclick="openLightbox(this.src, this.alt)"></div>
+      <div class="graphic-item"><img src="images/graphics/22.webp" alt="Graphic post 22" loading="lazy" decoding="async" onclick="openLightbox(this.src, this.alt)"></div>
+      <div class="graphic-item"><img src="images/graphics/23.webp" alt="Graphic post 23" loading="lazy" decoding="async" onclick="openLightbox(this.src, this.alt)"></div>
+      <div class="graphic-item"><img src="images/graphics/24.webp" alt="Graphic post 24" loading="lazy" decoding="async" onclick="openLightbox(this.src, this.alt)"></div>
+    </div>
+
+    <a class="more-link" href="https://drive.google.com/drive/folders/1-teroQfiD8DEgA9dQwwDxMzBWqelmTav?usp=sharing" target="_blank" rel="noopener">See the full collection  →</a>
+  </section>
+
+  <!-- VIDEO PROJECTS -->
+  <section id="videos">
+    <div class="section-head">
+      <h2>Video projects</h2>
+      <span class="section-num">Reels, promos &amp; edits</span>
+    </div>
+
+    <!--
+      HOW EACH VIDEO CARD WORKS
+      -------------------------
+      - The cover is a small image in images/videos/ (made by compress.py).
+      - The video itself stays in Google Drive (nothing heavy goes to GitHub).
+      - data-embed = the Drive "preview" link of that one video:
+          1. In Drive, right-click the video > Share > "Anyone with the link" (Viewer)
+          2. Copy the link. It looks like  https://drive.google.com/file/d/FILE_ID/view?usp=sharing
+          3. Replace PASTE_FILE_ID_HERE below with that FILE_ID
+      Clicking a card plays the video inside the page. An "Open in Google Drive" link
+      is also shown under the player.
+    -->
+    <div class="video-grid">
+
+      <button class="video-card" type="button" data-embed="https://drive.google.com/file/d/1qrn8U9ebeERj5Bgi5ym7lfz13WXR6ULa/view?usp=drive_link" data-title="Idli promotion video">
+        <span class="video-thumb">
+          <img src="images/videos/idli.webp" alt="Idli promotion video cover" loading="lazy">
+          <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span>
+        </span>
+        <span class="video-body">
+          <span class="video-title">Idli promotion video</span>
+          <span class="video-desc"></span>
+        </span>
+      </button>
+
+      <button class="video-card" type="button" data-embed="https://drive.google.com/file/d/1B1uvF8EKau-f0cNHl9vyUU36LXrAIayC/view?usp=drive_link" data-title="Samosa promotion video">
+        <span class="video-thumb">
+          <img src="images/videos/samosa.webp" alt="Samosa promotion video cover" loading="lazy">
+          <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span>
+        </span>
+        <span class="video-body">
+          <span class="video-title">Samosa promotion video</span>
+          <span class="video-desc"></span>
+        </span>
+      </button>
+
+      <button class="video-card" type="button" data-embed="https://drive.google.com/file/d/1MRtDvy5OvxQYaonj_NMMJ6-7TJm15MiR/view?usp=drive_link" data-title="Kottu parotta promotion video">
+        <span class="video-thumb">
+          <img src="images/videos/kottu.webp" alt="Kottu parotta promotion video cover" loading="lazy">
+          <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span>
+        </span>
+        <span class="video-body">
+          <span class="video-title">Kottu parotta promotion video</span>
+          <span class="video-desc"></span>
+        </span>
+      </button>
+
+      <button class="video-card" type="button" data-embed="https://drive.google.com/file/d/17A_AzV3r-m-tMfYNRRD9TtHbOedSqP6k/view?usp=drive_link" data-title="Fresh mint lemonade promotion video">
+        <span class="video-thumb">
+          <img src="images/videos/lemonade.webp" alt="Fresh mint lemonade promotion video cover" loading="lazy">
+          <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span>
+        </span>
+        <span class="video-body">
+          <span class="video-title">Fresh mint lemonade promotion video</span>
+          <span class="video-desc"></span>
+        </span>
+      </button>
+
+    </div>
+
+    <a class="more-link" href="https://drive.google.com/drive/folders/12-llDY2sLAjAuLLfCSPxv0zfiZucOY-M?usp=sharing" target="_blank" rel="noopener">Watch more videos →</a>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-head">
+      <h2>Skills</h2>
+      <span class="section-num">Marketing, design &amp; code</span>
+    </div>
+    <div class="skills-cols">
+      <div>
+        <h3>Marketing</h3>
+        <div class="tag-cloud">
+          <span>Social media strategy</span>
+          <span>SEO</span>
+          <span>Content creation &amp; scheduling</span>
+          <span>Video editing</span>
+          <span>Graphic design</span>
+        </div>
+      </div>
+      <div>
+        <h3>Design &amp; UI/UX</h3>
+        <div class="tag-cloud">
+          <span>Figma</span>
+          <span>Adobe XD</span>
+          <span>Photoshop</span>
+          <span>Illustrator</span>
+          <span>Animate</span>
+          <span>Lightroom</span>
+          <span>CapCut</span>
+        </div>
+      </div>
+      <div>
+        <h3>Development</h3>
+        <div class="tag-cloud">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+          <span>Tailwind CSS</span>
+        </div>
+      </div>
+      <div>
+        <h3>Soft skills</h3>
+        <div class="tag-cloud">
+          <span>Time management</span>
+          <span>Analytical thinking</span>
+          <span>Public relations</span>
+          <span>Teamwork</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="section-head">
+      <h2>Education &amp; certificates</h2>
+      <span class="section-num"></span>
+    </div>
+    <ul class="edu-list">
+      <li><strong>Bachelor of Information and Communication Technology</strong> — University of Colombo, Sri Lanka <em>Undergraduate</em></li>
+      <li><strong>SEO Certification</strong> — HubSpot Academy</li>
+      <li><strong>Build a Free Website with WordPress</strong> — Coursera</li>
+      <li><strong>Android Studio Tutorial &amp; Design Thinking</strong> — Great Learning Academy</li>
+      <li><strong>Web Development Course</strong> — University of Moratuwa, Sri Lanka (CODL)</li>
+      <li><strong>English Language Course</strong> — B-Hood English Institute (British Council IELTS partner)</li>
+      <li><strong>GCE Advanced Level Examination, 2020</strong> — Mahinda Rajapaksha College, Matara <em>A/L</em></li>
+      <li><strong>GCE Ordinary Level Examination, 2017</strong> — Mahamaya Balika Vidyalaya, Matara <em>O/L</em></li>
+    </ul>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact">
+      <div>
+        <h2>Let's work together</h2>
+        <p>Open to digital marketing and UI/UX roles, freelance projects, and collaborations. The fastest way to reach me is email or a call.</p>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:samadhijayamini2001@gmail.com">Email <span class="arrow">→</span></a>
+        <a href="tel:+94705576580">+94 70 557 6580 <span class="arrow">→</span></a>
+        <a href="http://www.linkedin.com/in/samadhi-abeygunawardhana-166a08264" target="_blank" rel="noopener">LinkedIn <span class="arrow">→</span></a>
+        <a href="https://github.com/samadhijayammini" target="_blank" rel="noopener">GitHub <span class="arrow">→</span></a>
+        <a href="https://www.behance.net/samadhijayamin" target="_blank" rel="noopener">Behance <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>© <span id="yr"></span> Samadhi Jayamini Abeygunawardhana. Built with care.</footer>
+
+<!-- Shared lightbox: graphic posts (image) and video projects (Google Drive player) -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Preview">
+  <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Close">✕</button>
+  <img id="lightbox-img" src="" alt="" hidden>
+  <iframe id="lightbox-frame" title="Video player" allow="autoplay; fullscreen" allowfullscreen hidden></iframe>
+  <a class="lightbox-open" id="lightbox-open" href="#" target="_blank" rel="noopener" hidden>Open in Google Drive ↗</a>
+</div>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Fallback if a video card still has the placeholder link: open your Drive videos folder instead
+  const VIDEOS_FOLDER = 'https://drive.google.com/drive/folders/12-llDY2sLAjAuLLfCSPxv0zfiZucOY-M?usp=sharing';
+
+  const lightbox = document.getElementById('lightbox');
+  const lbImg    = document.getElementById('lightbox-img');
+  const lbFrame  = document.getElementById('lightbox-frame');
+  const lbOpen   = document.getElementById('lightbox-open');
+  const lbClose  = document.getElementById('lightbox-close');
+  let lastFocus  = null;
+
+  function showLightbox(){
+    lastFocus = document.activeElement;
+    lightbox.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    lbClose.focus();
+  }
+
+  // Graphic posts
+  function openLightbox(src, alt){
+    lbImg.src = src;
+    lbImg.alt = alt || '';
+    lbImg.hidden = false;
+    showLightbox();
+  }
+
+  // Video projects: play the Google Drive video inside the page
+  function openVideo(card){
+    const embed = card.dataset.embed || '';
+    if (!embed || embed.indexOf('PASTE_FILE_ID_HERE') !== -1){
+      window.open(VIDEOS_FOLDER, '_blank', 'noopener');
+      return;
+    }
+    lbFrame.src = embed;
+    lbFrame.title = card.dataset.title || 'Video player';
+    lbFrame.hidden = false;
+    lbOpen.href = embed.replace('/preview', '/view');
+    lbOpen.hidden = false;
+    showLightbox();
+  }
+
+  function closeLightbox(){
+    if (!lightbox.classList.contains('is-open')) return;
+    lightbox.classList.remove('is-open');
+    document.body.style.overflow = '';
+
+    lbImg.hidden = true;   lbImg.removeAttribute('src');
+    lbFrame.hidden = true; lbFrame.removeAttribute('src');
+    lbOpen.hidden = true;
+
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  document.querySelectorAll('.video-card').forEach(function(card){
+    card.addEventListener('click', function(){ openVideo(card); });
+  });
+
+  lbClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', function(e){ if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeLightbox(); });
+</script>
+</body>
+</html>
